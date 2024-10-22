@@ -1,0 +1,151 @@
+body {
+  font-family: "Cairo", sans-serif;
+  margin: 0;
+}
+.root {
+  padding: 0;
+  margin: 0;
+}
+.form {
+  border: solid rgba(149, 157, 165, 0.2) 2px;
+  border-radius: 10px;
+  padding: 20px 30px 20px 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 330px;
+  font-size: 17px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.formUpdateStyel {
+  padding: 20px 30px 20px 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  font-size: 18px;
+}
+.formDiv {
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input {
+  margin: 5px 0px 10px 0px;
+  padding: 10px;
+  border: solid rgba(0, 0, 0, 0.226) 2px;
+  border-radius: 5px;
+}
+.btndiv {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+.btn {
+  padding: 15px;
+  border: solid rgba(0, 0, 255, 0.671) 1px;
+  border-radius: 7px;
+  background-color: rgba(49, 49, 241, 0.815);
+  color: white;
+  width: 150px;
+}
+.btn.btn:hover {
+  background-color: rgb(22, 22, 161);
+  color: white;
+}
+.btnUpdateStyle {
+  padding: 15px;
+  border: solid rgba(0, 0, 255, 0.671) 1px;
+  border-radius: 7px;
+  background-color: rgb(22, 22, 161);
+  color: white;
+  width: 100%;
+  margin-top: 20px;
+}
+.btnUpdateStyle:hover {
+  background-color: rgba(49, 49, 241, 0.815);
+  color: white;
+}
+
+.p_message {
+  color: red;
+  font-size: 15px;
+}
+.Register_btn {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  padding: 12px 25px 12px 25px;
+  border: rgba(0, 128, 0, 0.349) solid 2px;
+  border-radius: 5px;
+  margin: 15px 0 15px 0;
+  box-shadow: rgba(39, 174, 96, 0.15) 0 4px 9px;
+  font-size: 17px;
+  transition: all 0.2s;
+}
+.Register_btn:hover {
+  background-color: #27ae5fb6;
+
+  color: white;
+}
+.Login {
+  background-color: #27ae5fb6;
+  color: white;
+  padding: 12px 25px 12px 25px;
+  border: rgba(0, 128, 0, 0.349) solid 2px;
+  border-radius: 5px;
+  margin-left: 15px;
+  box-shadow: rgba(39, 174, 96, 0.15) 0 4px 9px;
+  font-size: 17px;
+  transition: all 0.2s;
+}
+.Login:hover {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+}
+.Logout {
+  background-color: #f30d0d8f;
+  color: white;
+  padding: 12px 25px 12px 25px;
+  border: rgba(0, 128, 0, 0.349) solid 2px;
+  border-radius: 5px;
+  margin: 15px;
+  box-shadow: rgba(39, 174, 96, 0.15) 0 4px 9px;
+  font-size: 17px;
+  transition: all 0.2s;
+}
+.Logout:hover {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+}
+
+/* ///////////////////////// */
+
+.header_div {
+  display: flex;
+  justify-content: space-between;
+}
+.list {
+  padding: 15px 15px 15px 40px;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+  font-weight: bolder;
+}
+.link {
+  padding: 12px 25px 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  box-shadow: rgba(39, 174, 96, 0.15) 0 4px 9px;
+  padding: 12px 25px 12px 25px;
+  border-radius: 5px;
+}
+.contaner {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  padding: 0 30px;
+}
+/* ********** */
