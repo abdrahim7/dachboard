@@ -8,15 +8,15 @@ const Login = () => {
   const [email, setEmail] = useState([]);
   const [password, sePassword] = useState([]);
   const [accept, setAccept] = useState(false);
-  const [Err, setErr] = useState(true);
+  const [Err, setErr] = useState(false);
 
   const navi = useNavigate();
   const userNow = useContext(User);
- 
+
   async function Submit(e) {
     e.preventDefault();
     setAccept(true);
-
+    
     try {
     
       //send data to backend
@@ -36,6 +36,7 @@ const Login = () => {
     } catch (err) {
       if (err.response.status === 401) {
         setErr(true);
+       
       }
       setAccept(true);
     }
@@ -74,7 +75,7 @@ const Login = () => {
               Longin
             </button>
           </div>
-          {Err && accept && (
+          {Err && accept &&  (
            <p className="p_message">Wrong Email Or Password</p>
           )}
         </form>

@@ -8,7 +8,6 @@ const Users = () => {
 
   const context = useContext(User);
   const token = context.auth.token;
-  console.log("the token is :"+token)
 
   useEffect(() => {
     //we used this method to fetching data from servar
@@ -16,18 +15,23 @@ const Users = () => {
       .get("http://127.0.0.1:8000/api/user/show", {
         headers: {
           Accept: "application/json",
-          Authorization: "Bearer" + token ,
+          Authorization: " Bearer " + token, // Add space after "Bearer"
         },
       })
       /* .then((res) => res.json()) */ //we use this expretion just with fetch data
       .then((data) => setUsers(data.data))
       .catch((err) => console.log(err));
-  }, [runUseEffect]);
+  }, [runUseEffect, token]);
   async function deleatUser(id) {
     try {
       //deleteing data of user we want remouv
       const res = await axios.delete(
-        `http://127.0.0.1:8000/api/user/delete/${id}`
+        `http://127.0.0.1:8000/api/user/delete/${id}`,
+        {
+          headers: {
+            Authorization: " Bearer " + token,
+          },
+        }
       );
       if (res.status === 200) {
         setRunUseEffectn((prev) => prev + 1);
@@ -36,6 +40,25 @@ const Users = () => {
       }
     } catch {
       console.log("faled load");
+    }
+  }
+
+  async function refresh() {
+    try {
+      await axios
+        .post(`http://127.0.0.1:8000/api/refresh`, null, {
+          headers: {
+            Authorization: " Bearer " + token,
+          },
+        })
+        .then((data) =>
+          context.setAuth((prev) => {
+            //we chage the previos token by the new one and we save it in the constext
+            return { ...prev, token: data.data.token };
+          })
+        );
+    } catch (err) {
+      console.log(err);
     }
   }
 
@@ -72,6 +95,7 @@ const Users = () => {
         </thead>
         <tbody>{showUsers}</tbody>
       </table>
+      <button onClick={refresh}>Refresh Token</button>
     </div>
   );
 };
